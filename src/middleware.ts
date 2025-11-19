@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
   // Check if the path is missing a locale
-  const pathnameIsMissingLocale = ['/en', '/ar', '/tr'].every(
+  const pathnameIsMissingLocale = ['/en', '/tr'].every(
     (locale) => !pathname.startsWith(locale) && pathname !== locale
   );
 
@@ -24,7 +24,7 @@ export function middleware(request: NextRequest) {
 function getLocale(request: NextRequest): string {
   // Check if there's a preferred locale in cookies
   const localeCookie = request.cookies.get('locale')?.value;
-  if (localeCookie && ['en', 'ar', 'tr'].includes(localeCookie)) {
+  if (localeCookie && ['en',  'tr'].includes(localeCookie)) {
     return localeCookie;
   }
 
@@ -32,11 +32,11 @@ function getLocale(request: NextRequest): string {
   const acceptLanguage = request.headers.get('accept-language');
   if (acceptLanguage) {
     // Simple locale detection - you can make this more sophisticated
-    if (acceptLanguage.includes('ar')) return 'ar';
+  
     if (acceptLanguage.includes('tr')) return 'tr';
   }
   
-  return 'en'; // Default fallback
+  return 'en';
 }
 
 export const config = {

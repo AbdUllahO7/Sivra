@@ -6,7 +6,6 @@ export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // This should rarely be hit due to middleware, but serves as a fallback
     router.replace('/en');
   }, [router]);
 
