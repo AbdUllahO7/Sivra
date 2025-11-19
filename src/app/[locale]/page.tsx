@@ -7,7 +7,7 @@ import HeroSection from '../components/HeroSection';
 import StorySection from '../components/StorySection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import ProductsSection from '../components/ProductsSection';
+import ServicesSection from '../components/ServicesSection';
 
 const SwispyWebsite = () => {
   const { i18n } = useTranslation();
@@ -28,7 +28,7 @@ const SwispyWebsite = () => {
     <div className={`min-h-screen ${isRTL ? 'rtl' : 'ltr'}`}>
       <Header currentLang={currentLang} changeLanguage={changeLanguage} />
       <HeroSection />
-      <ProductsSection />
+      <ServicesSection />
       <StorySection />
       <ContactSection />
       <Footer />

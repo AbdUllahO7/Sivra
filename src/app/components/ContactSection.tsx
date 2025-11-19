@@ -4,211 +4,288 @@ import { useTranslation } from 'react-i18next';
 const ContactSection: React.FC = () => {
   const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  const contactCards = [
+  const contactMethods = [
     {
-      icon: 'https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-image-2.png',
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      ),
+      title: t('contact.email'),
+      description: t('contact.emailDesc'),
+      link: 'mailto:hello@sivra.com',
+      value: 'hello@sivra.com'
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      ),
       title: t('contact.whatsapp'),
-      description: t('contact.orderDirect'),
-      link: 'https://wa.me/your-number',
-      color: 'from-green-400 to-emerald-500',
-      hoverColor: 'from-green-500 to-emerald-600'
+      description: t('contact.whatsappDesc'),
+      link: 'https://wa.me/1234567890',
+      value: '+1 (234) 567-890'
     },
     {
-      icon: 'https://freepngimg.com/save/webp/118541-logo-instagram-png-download-free',
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      ),
       title: t('contact.instagram'),
-      description: '@swispy.offical',
-      link: 'https://www.instagram.com/swispy.official?igsh=ZTNnYzhudm1oM2lp',
-      color: 'from-pink-400 to-purple-500',
-      hoverColor: 'from-pink-500 to-purple-600'
+      description: t('contact.instagramDesc'),
+      link: 'https://instagram.com/sivra',
+      value: '@sivra'
     },
     {
-      icon: 'https://logos-world.net/wp-content/uploads/2020/04/TikTok-Logo-2016-present.png',
-      title: t('contact.tiktok'),
-      description: '@swispy.offical',
-      link: 'https://www.tiktok.com/@swispy.official?_t=ZS-8yOk0uDg95u&_r=1',
-      color: 'from-gray-800 to-gray-900',
-      hoverColor: 'from-gray-900 to-black'
-    },
+      icon: (
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      ),
+      title: t('contact.linkedin'),
+      description: t('contact.linkedinDesc'),
+      link: 'https://linkedin.com/company/sivra',
+      value: 'SIVRA Studio'
+    }
   ];
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <>
-      {/* Share Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-pink-200/30 to-purple-200/30 rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-56 h-56 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        </div>
+    <section id="contact" className="py-24 px-6 bg-[#fafafa] relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, black 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
 
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="space-y-8">
-            <div className="inline-block px-6 py-3 bg-white/80 backdrop-blur-md rounded-full text-pink-600 font-semibold text-sm border border-white/50">
-              🎉 {t('share.shareLove')}
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl xl:text-6xl font-black mb-6">
-              <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-700 bg-clip-text text-transparent">
-                {t('share.title')}
-              </span>
-            </h2>
-            
-            <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50">
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                {t('share.description')}
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex flex-wrap justify-center gap-4">
-                  <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg">
-                    #SwispyMoment
-                  </div>
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg">
-                    #MySwispy
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 text-lg">
-                  {t('share.feature')}
-                </p>
-              </div>
-
-              {/* Visual Mockup */}
-              <div className="mt-12 grid md:grid-cols-3 gap-6">
-                <div className="group">
-                  <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-6 group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                    <div className="text-4xl mb-4 text-center">📷</div>
-                    <div className="text-sm font-semibold text-gray-700 text-center">{t('share.snapMoment')}</div>
-                  </div>
-                </div>
-                <div className="group">
-                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                    <div className="text-4xl mb-4 text-center">📱</div>
-                    <div className="text-sm font-semibold text-gray-700 text-center">{t('share.shareHashtag')}</div>
-                  </div>
-                </div>
-                <div className="group">
-                  <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-6 group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                    <div className="text-4xl mb-4 text-center">🎁</div>
-                    <div className="text-sm font-semibold text-gray-700 text-center">{t('share.winPrizes')}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-50 to-pink-50/30"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-pink-600 font-semibold text-sm mb-6 border border-pink-200/50">
-              📲 {t('contact.title')}
-            </div>
-            
-            <h2 className="text-5xl md:text-6xl xl:text-7xl font-black mb-6">
-              <span className="block text-gray-800">{t('contact.letsConnect')}</span>
-            </h2>
-            
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t('contact.connectDesc')}
-            </p>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20 space-y-6">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-black/5 rounded-full">
+            <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-black/70">
+              {t('contact.badge')}
+            </span>
           </div>
 
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {contactCards.map((card, index) => (
-              <div
-                key={index}
-                className="group relative cursor-pointer"
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-                onClick={() => card.link !== '#' && window.open(card.link, '_blank')}
-              >
-                {/* Background Card */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${hoveredCard === index ? card.hoverColor : card.color} rounded-3xl transform transition-all duration-500 ${hoveredCard === index ? 'scale-105 rotate-2' : 'group-hover:scale-102 group-hover:rotate-1'}`}></div>
-                
-                {/* Main Card */}
-                <div className="relative bg-white/95 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50 h-full min-h-[280px] flex flex-col">
-                  <div className="text-center flex-1">
-                    {/* Image Icon */}
-                    <div className={`mb-6 flex justify-center transform transition-all duration-500 ${hoveredCard === index ? 'scale-110 animate-bounce' : 'group-hover:scale-105'}`}>
-                      <div className="relative w-20 h-20">
-                        <img
-                          src={card.icon}
-                          alt={card.title}
-                        
-                          className="object-contain"
-                          sizes="80px"
-                        />
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-pink-600 transition-colors duration-300">
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                  
-                  {card.link !== '#' && (
-                    <div className="text-center mt-6">
-                      <div className={`inline-flex items-center px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+          <div className="space-y-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black">
+              {t('contact.title')}
+            </h2>
+            <div className="h-1 w-20 bg-black rounded-full mx-auto"></div>
+          </div>
+
+          <p className="text-lg lg:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
+            {t('contact.connectDesc')}
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* Left Side - Contact Methods */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-black mb-8">
+              {t('contact.getInTouch')}
+            </h3>
+
+            <div className="space-y-4">
+              {contactMethods.map((method, index) => (
+                <a
+                  key={index}
+                  href={method.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className={`relative bg-white rounded-2xl p-6 border transition-all duration-300 ${
+                    hoveredCard === index
+                      ? 'border-black shadow-xl scale-102'
+                      : 'border-black/10 hover:border-black/20 shadow-md'
+                  }`}>
+                    <div className="flex items-start space-x-4">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                         hoveredCard === index
-                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
-                          : 'bg-gradient-to-r from-pink-100 to-purple-100 text-pink-600 group-hover:from-pink-200 group-hover:to-purple-200'
+                          ? 'bg-black text-white scale-110'
+                          : 'bg-black/5 text-black group-hover:bg-black/10'
                       }`}>
-                        <span className="mr-2">✨</span>
-                        {t('contact.connectNow')}
-                        <span className="ml-2">✨</span>
+                        {method.icon}
                       </div>
-                    </div>
-                  )}
-                  
-                  {card.link === '#' && (
-                    <div className="text-center mt-6">
-                      <div className="inline-flex items-center px-6 py-3 bg-gray-100 rounded-full text-sm font-semibold text-gray-500">
-                        <span className="mr-2">⏳</span>
-                        {t('home.comingSoon')}
-                        <span className="ml-2">⏳</span>
-                      </div>
-                    </div>
-                  )}
 
-                  {/* Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      {/* Content */}
+                      <div className="flex-1">
+                        <h4 className={`text-lg font-bold mb-1 transition-colors duration-300 ${
+                          hoveredCard === index ? 'text-black' : 'text-black/80'
+                        }`}>
+                          {method.title}
+                        </h4>
+                        <p className="text-sm text-black/60 mb-2">
+                          {method.description}
+                        </p>
+                        <p className="text-sm font-medium text-black/80">
+                          {method.value}
+                        </p>
+                      </div>
+
+                      {/* Arrow */}
+                      <div className={`w-8 h-8 flex items-center justify-center transition-transform duration-300 ${
+                        hoveredCard === index ? 'translate-x-1' : ''
+                      }`}>
+                        <svg className="w-5 h-5 text-black/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Hover Border Effect */}
+                    <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 pointer-events-none ${
+                      hoveredCard === index ? 'opacity-100' : 'opacity-0'
+                    }`} style={{
+                      boxShadow: 'inset 0 0 0 2px rgba(0, 0, 0, 0.1)'
+                    }}></div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Additional Info */}
+            <div className="mt-8 p-6 bg-white rounded-2xl border border-black/10">
+              <h4 className="text-lg font-bold text-black mb-3">
+                {t('contact.businessHours')}
+              </h4>
+              <div className="space-y-2 text-sm text-black/70">
+                <div className="flex justify-between">
+                  <span>{t('contact.weekdays')}</span>
+                  <span className="font-medium text-black/80">9:00 AM - 6:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{t('contact.weekend')}</span>
+                  <span className="font-medium text-black/80">{t('contact.byAppointment')}</span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
-          {/* Thank You Message */}
-          <div className="text-center">
-            <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-xl border border-pink-100/50 max-w-4xl mx-auto">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                {t('contact.thankYou')}
+          {/* Right Side - Contact Form */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-black rounded-2xl transform transition-transform duration-300 hover:translate-x-1 hover:translate-y-1"></div>
+            <div className="relative bg-white rounded-2xl p-8 border-2 border-black">
+              <h3 className="text-2xl font-bold text-black mb-6">
+                {t('contact.sendMessage')}
               </h3>
-              
-              <div className="flex justify-center space-x-4 text-4xl mb-6">
-                <span className="animate-bounce">🧁</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.2s' }}>💕</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.4s' }}>🎁</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.6s' }}>✨</span>
-              </div>
-              
-              <p className="text-lg text-gray-600 leading-relaxed">
-                {t('contact.familyDesc')}
-              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Input */}
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-black/80 mb-2">
+                    {t('contact.name')}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300"
+                    placeholder={t('contact.namePlaceholder')}
+                    required
+                  />
+                </div>
+
+                {/* Email Input */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-black/80 mb-2">
+                    {t('contact.emailLabel')}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300"
+                    placeholder={t('contact.emailPlaceholder')}
+                    required
+                  />
+                </div>
+
+                {/* Message Textarea */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-black/80 mb-2">
+                    {t('contact.message')}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300 resize-none"
+                    placeholder={t('contact.messagePlaceholder')}
+                    required
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="group w-full px-8 py-4 bg-black text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center space-x-2"
+                >
+                  <span>{t('contact.sendButton')}</span>
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-    </>
+
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <div className="bg-black rounded-2xl p-12 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              {t('contact.readyToStart')}
+            </h3>
+            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+              {t('contact.readyToStartDesc')}
+            </p>
+            <a
+              href="#hero"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-black rounded-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              <span>{t('contact.scheduleCall')}</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -3,7 +3,6 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import enTranslations from '../messages/en.json';
-import arTranslations from '../messages/ar.json';
 import trTranslations from '../messages/tr.json';
 
 i18n
@@ -17,9 +16,7 @@ i18n
       en: {
         translation: enTranslations
       },
-      ar: {
-        translation: arTranslations
-      },
+    
       tr: {
         translation: trTranslations
       }
