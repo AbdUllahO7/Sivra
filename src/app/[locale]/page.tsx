@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import ServicesSection from '../components/ServicesSection';
 import Products from '../components/Products';
 import PersonalSkills from '../components/PersonalSkills';
+import Pricing from '../components/Pricing';
 
 const SwispyWebsite = () => {
   const { i18n } = useTranslation();
@@ -33,7 +34,8 @@ const SwispyWebsite = () => {
       <Products/>
       <ServicesSection />
       <StorySection />
-       <PersonalSkills />
+      <PersonalSkills />
+      <Pricing/>
       <ContactSection />
       <Footer />
       

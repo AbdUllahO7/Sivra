@@ -266,5 +266,66 @@
       "icon": "moon"
     }
   ]
-}
+},
+  "pricing": {
+    "badge": "Fiyatlandırma Planları",
+    "title": "Planınızı Seçin",
+    "subtitle": "Her iş aşaması için esnek fiyatlandırma seçenekleri",
+    "description": "Kapsamlı çözümlerimizle işinizi büyütmek için mükemmel planı seçin",
+    "cta": "Hemen Kaydol",
+    "bottomText": "Özel bir çözüme mi ihtiyacınız var? Özel ihtiyaçlarınız hakkında konuşalım.",
+    "contactCta": "Bize Ulaşın",
+    "tiers": [
+      {
+        "id": "starter",
+        "name": "Başlangıç Planı",
+        "tagline": "Küçük İşletmeler ve Yeni Başlayanlar İçin",
+        "setupPrice": "$1,000 Kurulum +",
+        "monthlyPrice": "$97/ay",
+        "description": "Müşteri adaylarını yakalamak ve çevrimiçi varlığınızı geliştirmek için tasarlanmış şık, mobil uyumlu bir web sitesiyle başlayın.",
+        "features": [
+          "3 Sayfalık Web Sitesi",
+          "Sayfa İçi SEO Optimizasyonu",
+          "Müşteri Yakalama Formu ve Sohbet Widget'ı",
+          "Mobil Uyumlu Web Sitesi Tasarımı",
+          "Mobil Uygulama Yönetimi",
+          "SMS ve E-posta Otomasyonları"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "growth",
+        "name": "Büyüme Planı",
+        "tagline": "Büyüyen İşletmeler ve Girişimciler İçin",
+        "setupPrice": "$2,000 Kurulum +",
+        "monthlyPrice": "$297/ay",
+        "description": "Dönüşümleri en üst düzeye çıkarmak için gelişmiş SEO, otomasyon ve müşteri adayı yönetim araçlarıyla işinizi büyütün.",
+        "features": [
+          "5 Sayfalık Web Sitesi",
+          "Başlangıç Planındaki Her Şey +",
+          "Google Yorumları Otomasyonu",
+          "Ödeme İşlemleri",
+          "Takvim Rezervasyon Sistemi",
+          "Öncelikli Destek"
+        ],
+        "highlighted": true
+      },
+      {
+        "id": "elite",
+        "name": "Elite Planı",
+        "tagline": "Yüksek Performanslı Markalar ve Kurumlar İçin",
+        "setupPrice": "$3,000 Kurulum +",
+        "monthlyPrice": "$697/ay",
+        "description": "Hızlı büyüyen işletmeler için tam otomasyon, premium özelleştirme ve kurumsal düzeyde çözümlerin kilidini açın.",
+        "features": [
+          "10+ Sayfalık Web Sitesi",
+          "Büyüme Planındaki Her Şey +",
+          "Devam Eden SEO Optimizasyonu",
+          "AI Chatbot ve Sesli Bot",
+          "İki Ayda Bir Pazarlama Danışmanlığı Görüşmeleri"
+        ],
+        "highlighted": false
+      }
+    ]
+  }
 }

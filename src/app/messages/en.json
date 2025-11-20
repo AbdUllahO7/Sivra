@@ -266,5 +266,66 @@
       "icon": "moon"
     }
   ]
-}
+},
+"pricing": {
+    "badge": "Pricing Plans",
+    "title": "Choose Your Plan",
+    "subtitle": "Flexible pricing options for every business stage",
+    "description": "Select the perfect plan to grow your business with our comprehensive solutions",
+    "cta": "Contact Us",
+    "bottomText": "Need a custom solution? Let's talk about your specific needs.",
+    "contactCta": "Contact Us",
+    "tiers": [
+      {
+        "id": "starter",
+        "name": "Starter Plan",
+        "tagline": "For Small Businesses & Startups",
+        "setupPrice": "$1,000 Setup +",
+        "monthlyPrice": "$97/month",
+        "description": "Get started with a sleek, mobile-friendly website designed to capture leads and improve your online presence.",
+        "features": [
+          "3-Page Website",
+          "On-Page SEO Optimization",
+          "Lead Capture Form & Chat Widget",
+          "Mobile-Friendly Website Design",
+          "Mobile App Management",
+          "SMS & Email Automations"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "growth",
+        "name": "Growth Plan",
+        "tagline": "For Scaling Businesses & Entrepreneurs",
+        "setupPrice": "$2,000 Setup +",
+        "monthlyPrice": "$297/month",
+        "description": "Scale your business with advanced SEO, automation, and lead management tools to maximize conversions.",
+        "features": [
+          "5-Page Website",
+          "Everything in Starter +",
+          "Google Reviews Automation",
+          "Payment Processing",
+          "Calendar Booking System",
+          "Priority Support"
+        ],
+        "highlighted": true
+      },
+      {
+        "id": "elite",
+        "name": "Elite Plan",
+        "tagline": "For High-Performing Brands & Enterprises",
+        "setupPrice": "$3,000 Setup +",
+        "monthlyPrice": "$697/month",
+        "description": "Unlock full automation, premium customization, and enterprise-level solutions for high-growth businesses.",
+        "features": [
+          "10+ Page Website",
+          "Everything in Growth +",
+          "Ongoing SEO Optimization",
+          "AI Chatbot and Voice Bot",
+          "Bi-Monthly Marketing Consultation Calls"
+        ],
+        "highlighted": false
+      }
+    ]
+  }
 }
