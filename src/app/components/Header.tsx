@@ -58,9 +58,12 @@ const Header: React.FC<HeaderProps> = ({ currentLang, changeLanguage }) => {
           <nav className="hidden lg:flex items-center space-x-1">
             {[
               { href: '#home', label: t('nav.home') },
+               { href: '#products', label: t('nav.products') },
               { href: '#services', label: t('nav.services') },
-              { href: '#story', label: t('nav.ourStory') },
-              { href: '#contact', label: t('nav.contact') }
+                            { href: '#story', label: t('nav.story') },
+              { href: '#pricing', label: t('nav.pricing') },
+              { href: '#contact', label: t('nav.contact') },
+
             ].map((item) => (
               <a
                 key={item.href}
@@ -145,9 +148,11 @@ const Header: React.FC<HeaderProps> = ({ currentLang, changeLanguage }) => {
             <div className="flex flex-col space-y-1">
               {[
                 { href: '#home', label: t('nav.home') },
+                { href: '#products', label: t('nav.products') },
                 { href: '#services', label: t('nav.services') },
-                { href: '#story', label: t('nav.ourStory') },
-                { href: '#contact', label: t('nav.contact') }
+                { href: '#story', label: t('nav.story') },
+                { href: '#pricing', label: t('nav.pricing') },
+                { href: '#contact', label: t('nav.contact') },
               ].map((item, index) => (
                 <a
                   key={item.href}

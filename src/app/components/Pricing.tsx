@@ -21,7 +21,7 @@ const Pricing: React.FC = () => {
   const pricingTiers: PricingTier[] = t('pricing.tiers', { returnObjects: true }) as PricingTier[];
 
   return (
-    <section className="relative py-24 overflow-hidden bg-[#fafafa]" id="pricing">
+    <section  className="relative py-24 overflow-hidden bg-[#fafafa]" id="pricing">
       {/* Background Decorative Elements */}
     
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
