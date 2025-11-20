@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -32,20 +33,14 @@ const Header: React.FC<HeaderProps> = ({ currentLang, changeLanguage }) => {
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-11 h-11 bg-black rounded-lg flex items-center justify-center transition-all duration-500 group-hover:rounded-xl group-hover:scale-105">
-                <svg 
-                  className="w-6 h-6 text-[#fafafa]" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M13 10V3L4 14h7v7l9-11h-7z" 
-                  />
-                </svg>
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center transition-all duration-500 group-hover:rounded-xl group-hover:scale-105 overflow-hidden">
+                <Image
+                  width={500}
+                  height={500} 
+                  src="/assets/logo-removebg-preview.png" 
+                  alt="SIVRA Logo" 
+                  className=" w-[60px] h-[65px] object-cover"
+                />
               </div>
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -82,7 +77,8 @@ const Header: React.FC<HeaderProps> = ({ currentLang, changeLanguage }) => {
           {/* Right Section: CTA & Language Selector */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="#contact"
+              href="https://sivra.gumroad.com/"
+              target = "blank"
               className="relative px-6 py-2.5 text-sm font-semibold text-[#fafafa] bg-black rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-xl hover:scale-105"
             >
               <span className="relative z-10">{t('nav.getStarted')}</span>

@@ -246,44 +246,6 @@ const StorySection: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-24">
-          <div className="relative bg-[#fafafa] rounded-2xl p-12 border border-black/10 overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-black/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full blur-3xl"></div>
-
-            <div className="relative z-10 text-center space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl font-bold text-black">
-                  {t('story.joinJourney')}
-                </h3>
-                <p className="text-black/70 text-lg max-w-2xl mx-auto">
-                  {t('story.journeyDesc')}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#contact"
-                  className="group px-8 py-4 bg-black text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 inline-flex items-center justify-center space-x-2"
-                >
-                  <span>{t('story.startYourJourney')}</span>
-                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-
-                <a
-                  href="#services"
-                  className="px-8 py-4 bg-black/5 text-black rounded-lg font-semibold hover:bg-black/10 transition-all duration-300 inline-flex items-center justify-center"
-                >
-                  {t('story.exploreServices')}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

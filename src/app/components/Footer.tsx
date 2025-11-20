@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             {/* Social Links */}
             <div className="flex space-x-3">
               <a 
-                href="mailto:hello@sivra.com"
+                href="mailto:sivra.product@gmail.com"
                 className="group w-10 h-10 bg-white/10 hover:bg-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com/sivra"
+                href="https://www.instagram.com/sivra.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-10 h-10 bg-white/10 hover:bg-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/company/sivra"
+                href="http://linkedin.com/in/anoosha-moshkelgosha-568239261"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-10 h-10 bg-white/10 hover:bg-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -122,23 +122,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-white/10 pt-12 mb-12">
-          <div className="max-w-2xl mx-auto text-center space-y-4">
-            <h3 className="text-2xl font-bold text-white">{t('footer.stayUpdated')}</h3>
-            <p className="text-white/70 text-sm">{t('footer.newsletterDesc')}</p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder={t('footer.emailPlaceholder')}
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all duration-300"
-              />
-              <button className="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105">
-                {t('footer.subscribe')}
-              </button>
-            </div>
-          </div>
-        </div>
+    
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8">

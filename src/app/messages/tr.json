@@ -5,7 +5,7 @@
     "ourStory": "Hikayemiz",
     "contact": "İletişim",
     "tagline": "İş Stüdyosu",
-    "getStarted": "Başlayın"
+    "getStarted": "Aliş Verişi Başlayın"
   },
   "home": {
     "mainTitle": "SIVRA – Fikirden Lansmanı Gerçekleştirmeye",
@@ -170,5 +170,101 @@
     "forEntrepreneurs": "girişimciler için",
     "privacyPolicy": "Gizlilik Politikası",
     "termsOfService": "Hizmet Şartları"
-  }
+  },
+  "products": {
+    "title": "Dijital Ürünler",
+    "badge": "Koleksiyonumuzu Keşfedin",
+    "subtitle": "Hayatınızı ve işinizi özenle seçilmiş dijital ürünlerimizle dönüştürün",
+    "description": "Kişisel gelişiminizi ve iş başarınızı güçlendirmek için tasarlanmış özel kaynaklar",
+    "viewAll": "Tüm Ürünleri Görüntüle",
+    "shopNow": "Hemen Al",
+    "comingSoon": "Yakında",
+    "items": [
+      {
+        "id": "pr1",
+        "title": "Bırakmanın Psikolojisi",
+        "subtitle": "Kaygıyı, Kontrol Sorunlarını ve Toksik Bağları İyileştirin",
+        "description": "Duygusal Özgürlük için Zihinsel Sağlık e-Kitabı PDF",
+        "category": "Zihinsel Sağlık",
+        "image": "/assets/pr1.jpg"
+      },
+      {
+        "id": "pr2",
+        "title": "30 Günde Öz-Sevgi Yolculuğu",
+        "subtitle": "Kadınlar ve Aşırı Düşünenler İçin",
+        "description": "Özgün öz-sevgi ve güven inşa etmek için kapsamlı rehber",
+        "category": "Kişisel Gelişim",
+        "image": "/assets/pr2.jpg"
+      },
+      {
+        "id": "pr3",
+        "title": "Otomatik Sevgi Kodu",
+        "subtitle": "İlişki Ustalığı Rehberi",
+        "description": "İlişkilerinizi kanıtlanmış psikolojik stratejilerle dönüştürün",
+        "category": "İlişkiler",
+        "image": "/assets/pr3.jpg"
+      },
+      {
+        "id": "pr4",
+        "title": "RUH MÜREKKEBİ",
+        "subtitle": "Ruhunuzu Yeniden Şekillendiren Yasak Günlük",
+        "description": "Derin öz-keşif için dönüştürücü bir günlük deneyimi",
+        "category": "Günlük",
+        "image": "/assets/pr4.jpg"
+      },
+      {
+        "id": "pr5",
+        "title": "2025 Planlayıcı",
+        "subtitle": "En İyi Yılınızı Planlayın",
+        "description": "Hırslı girişimciler ve yaratıcılar için tasarlanmış stratejik planlayıcı",
+        "category": "Üretkenlik",
+        "image": "/assets/pr5.jpg"
+      },
+      {
+        "id": "pr7",
+        "title": "Sunum Şablonu",
+        "subtitle": "Profesyonel Yatırımcı Hazır Şablon",
+        "description": "Yatırımcıları ve müşterileri kazanmak için etkileyici sunum şablonu",
+        "category": "İş",
+        "image": "/assets/pr7.jpg"
+      }
+    ]
+  },
+  "skills": {
+  "title": "Kişisel Yetenekler",
+  "badge": "Ne Getiriyorum",
+  "description": "Stratejik, yaratıcı ve derin통찰력gözlü, markaları sıfırdan inşa etme konusunda uzmanım. Psikoloji ve MBA geçmişimle, yüksek dönüşümlü teklifler, görsel kimlikler ve pazarlama sistemleri oluşturmak için davranışsal anlayışı iş stratejisiyle harmanlıyorum. SIVRA'nın kurucusu olarak, ölçeklemeye hazır girişimciler ve yaratıcılar için markalaşma, içerik, dijital ürün oluşturma ve büyüme stratejisi sunan çok işlevli bir ekibe liderlik ediyorum.",
+  "items": [
+    {
+      "id": "skill-1",
+      "title": "Stratejik Düşünce ve İş Geliştirme",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-2",
+      "title": "Yaratıcı Yönetim ve İçerik Oluşturma",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-3",
+      "title": "Pazarlama ve Satış Stratejisi",
+      "icon": "circle"
+    },
+    {
+      "id": "skill-4",
+      "title": "Liderlik ve İşbirliği",
+      "icon": "circle"
+    },
+    {
+      "id": "skill-5",
+      "title": "Marka Kimliği ve Görsel Yönetim",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-6",
+      "title": "Girişimcilik ve Eğitim",
+      "icon": "moon"
+    }
+  ]
+}
 }

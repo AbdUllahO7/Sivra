@@ -9,6 +9,7 @@ const ContactSection: React.FC = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const contactMethods = [
     {
@@ -19,8 +20,8 @@ const ContactSection: React.FC = () => {
       ),
       title: t('contact.email'),
       description: t('contact.emailDesc'),
-      link: 'mailto:hello@sivra.com',
-      value: 'hello@sivra.com'
+      link: 'mailto:sivra.product@gmail.com',
+      value: 'sivra.product@gmail.com'
     },
     {
       icon: (
@@ -30,8 +31,8 @@ const ContactSection: React.FC = () => {
       ),
       title: t('contact.whatsapp'),
       description: t('contact.whatsappDesc'),
-      link: 'https://wa.me/1234567890',
-      value: '+1 (234) 567-890'
+      link: 'https://wa.me/+905360330996',
+      value: '+90 (536) 033 09 96'
     },
     {
       icon: (
@@ -41,8 +42,8 @@ const ContactSection: React.FC = () => {
       ),
       title: t('contact.instagram'),
       description: t('contact.instagramDesc'),
-      link: 'https://instagram.com/sivra',
-      value: '@sivra'
+      link: 'https://www.instagram.com/sivra.studio/',
+      value: 'sivra.studio'
     },
     {
       icon: (
@@ -52,15 +53,42 @@ const ContactSection: React.FC = () => {
       ),
       title: t('contact.linkedin'),
       description: t('contact.linkedinDesc'),
-      link: 'https://linkedin.com/company/sivra',
+      link: 'http://linkedin.com/in/anoosha-moshkelgosha-568239261',
       value: 'SIVRA Studio'
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setStatus('loading');
+
+    try {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `New Contact Form Submission from ${formData.name}`
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -171,31 +199,32 @@ const ContactSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Additional Info */}
-            <div className="mt-8 p-6 bg-white rounded-2xl border border-black/10">
-              <h4 className="text-lg font-bold text-black mb-3">
-                {t('contact.businessHours')}
-              </h4>
-              <div className="space-y-2 text-sm text-black/70">
-                <div className="flex justify-between">
-                  <span>{t('contact.weekdays')}</span>
-                  <span className="font-medium text-black/80">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>{t('contact.weekend')}</span>
-                  <span className="font-medium text-black/80">{t('contact.byAppointment')}</span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Right Side - Contact Form */}
-          <div className="relative">
+        <div className="relative">
             <div className="absolute inset-0 bg-black rounded-2xl transform transition-transform duration-300 hover:translate-x-1 hover:translate-y-1"></div>
             <div className="relative bg-white rounded-2xl p-8 border-2 border-black">
               <h3 className="text-2xl font-bold text-black mb-6">
                 {t('contact.sendMessage')}
               </h3>
+
+              {/* Success Message */}
+              {status === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 text-sm font-medium">
+                    ✓ Message sent successfully! We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-sm font-medium">
+                    ✗ Failed to send message. Please try again or email us directly.
+                  </p>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Input */}
@@ -212,6 +241,7 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300"
                     placeholder={t('contact.namePlaceholder')}
                     required
+                    disabled={status === 'loading'}
                   />
                 </div>
 
@@ -229,6 +259,7 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300"
                     placeholder={t('contact.emailPlaceholder')}
                     required
+                    disabled={status === 'loading'}
                   />
                 </div>
 
@@ -246,44 +277,40 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 bg-[#fafafa] border border-black/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-transparent transition-all duration-300 resize-none"
                     placeholder={t('contact.messagePlaceholder')}
                     required
+                    disabled={status === 'loading'}
                   />
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="group w-full px-8 py-4 bg-black text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center space-x-2"
+                  disabled={status === 'loading'}
+                  className="group w-full px-8 py-4 bg-black text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  <span>{t('contact.sendButton')}</span>
-                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <span>
+                    {status === 'loading' ? 'Sending...' : t('contact.sendButton')}
+                  </span>
+                  {status !== 'loading' && (
+                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  )}
+                  {status === 'loading' && (
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  )}
                 </button>
               </form>
             </div>
           </div>
-        </div>
+             </div>
+
+
 
         {/* Bottom CTA */}
-        <div className="text-center">
-          <div className="bg-black rounded-2xl p-12 text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              {t('contact.readyToStart')}
-            </h3>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              {t('contact.readyToStartDesc')}
-            </p>
-            <a
-              href="#hero"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-black rounded-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105"
-            >
-              <span>{t('contact.scheduleCall')}</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </a>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

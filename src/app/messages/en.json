@@ -5,7 +5,7 @@
     "ourStory": "Our Story",
     "contact": "Contact",
     "tagline": "Business Studio",
-    "getStarted": "Get Started"
+    "getStarted": "Get Shopping"
   },
   "home": {
     "mainTitle": "SIVRA – From Idea to Launch",
@@ -170,5 +170,101 @@
     "forEntrepreneurs": "for entrepreneurs",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
-  }
+  },
+  "products": {
+    "title": "Digital Products",
+    "badge": "Shop Our Collection",
+    "subtitle": "Transform your life and business with our curated digital products",
+    "description": "Carefully crafted resources designed to empower your personal growth and business success",
+    "viewAll": "View All Products",
+    "shopNow": "Shop Now",
+    "comingSoon": "Coming Soon",
+    "items": [
+      {
+        "id": "pr1",
+        "title": "The Psychology of Letting Go",
+        "subtitle": "Heal Anxiety, Control Issues, & Toxic Attachments",
+        "description": "Mental Health eBook PDF for Emotional Freedom",
+        "category": "Mental Health",
+        "image": "/assets/pr1.png"
+      },
+      {
+        "id": "pr2",
+        "title": "Self-Love Journey in 30 Days",
+        "subtitle": "For Women and Overthinkers",
+        "description": "A comprehensive guide to building authentic self-love and confidence",
+        "category": "Personal Growth",
+        "image": "/assets/pr2.png"
+      },
+      {
+        "id": "pr3",
+        "title": "The Autopilot Affection Code",
+        "subtitle": "Relationship Mastery Guide",
+        "description": "Transform your relationships with proven psychological strategies",
+        "category": "Relationships",
+        "image": "/assets/pr3.png"
+      },
+      {
+        "id": "pr4",
+        "title": "SOUL INK",
+        "subtitle": "The Forbidden Journal That Rewires Your Spirit",
+        "description": "A transformative journaling experience for deep self-discovery",
+        "category": "Journal",
+        "image": "/assets/pr4.png"
+      },
+      {
+        "id": "pr5",
+        "title": "2025 Planner",
+        "subtitle": "Plan Your Best Year Yet",
+        "description": "Strategic planner designed for ambitious entrepreneurs and creators",
+        "category": "Productivity",
+        "image": "/assets/pr5.png"
+      },
+      {
+        "id": "pr7",
+        "title": "Pitch Deck Template",
+        "subtitle": "Professional Investor-Ready Template",
+        "description": "Stunning pitch deck template to win investors and clients",
+        "category": "Business",
+        "image": "/assets/pr7.png"
+      }
+    ]
+  },
+  "skills": {
+  "title": "Personal Skills",
+  "badge": "What I Bring",
+  "description": "Strategic, creative, and deeply insightful, I specialize in building brands from the ground up. With a background in Psychology and MBA, I blend behavioral understanding with business strategy to craft high-converting offers, visual identities, and marketing systems. As the founder of SIVRA, I lead a cross-functional team delivering branding, content, digital product creation, and growth strategy for startups and creators ready to scale.",
+  "items": [
+    {
+      "id": "skill-1",
+      "title": "Strategic Thinking & Business Development",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-2",
+      "title": "Creative Direction & Content Creation",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-3",
+      "title": "Marketing & Sales Strategy",
+      "icon": "circle"
+    },
+    {
+      "id": "skill-4",
+      "title": "Leadership & Collaboration",
+      "icon": "circle"
+    },
+    {
+      "id": "skill-5",
+      "title": "Brand Identity & Visual Direction",
+      "icon": "moon"
+    },
+    {
+      "id": "skill-6",
+      "title": "Entrepreneurship & Education",
+      "icon": "moon"
+    }
+  ]
+}
 }

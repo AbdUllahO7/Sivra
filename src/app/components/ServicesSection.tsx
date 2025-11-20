@@ -94,13 +94,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </div>
 
           {/* CTA Button */}
-          <button className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
-            isActive
-              ? 'bg-black text-white shadow-lg'
-              : 'bg-black/5 text-black hover:bg-black/10'
-          }`}>
-            {t('services.learnMore')}
-          </button>
+        
+            <a
+              href="https://sivra.gumroad.com/"
+              target = "blank"
+              className="relative px-6 py-2.5 text-sm font-semibold text-[#fafafa] bg-black rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-xl hover:scale-105"
+            >
+              <span className="relative z-10"> {t('services.learnMore')}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </a>
         </div>
 
         {/* Hover Border Effect */}
