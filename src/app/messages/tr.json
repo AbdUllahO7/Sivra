@@ -36,13 +36,13 @@
     "stat2": "Mutlu Müşteri",
     "stat3": "Başarı Oranı"
   },
-  "services": {
+"services": {
     "title": "Hizmetler",
     "badge": "Ne Yapıyoruz",
     "ourOffering": "Hizmetlerimiz",
-    "offeringDesc": "İşletmenizi konseptten pazara taşımak için tasarlanmış kapsamlı hizmetler. İster tam marka geliştirmesi ister özel stratejik destek ihtiyacınız olsun, yardım etmek için buradayız.",
-    "workWithUs": "Markanızı Kurmaya Hazır Mısınız?",
-    "workWithUsDesc": "Vizyonunuzu tartışalım ve fikirlerinize hayat veren özel bir strateji oluşturalım. SIVRA'nın yolculuğunuzu nasıl destekleyebileceğini keşfetmek için ücretsiz bir danışma rezervasyonu yapın.",
+    "offeringDesc": "İşletmenizi konsepten pazara taşımak için tasarlanmış kapsamlı hizmetler. Tam marka geliştirmeye veya belirli stratejik desteğe ihtiyacınız olsun, size yardımcı olmak için buradayız.",
+    "workWithUs": "Markanızı Oluşturmaya Hazır Mısınız?",
+    "workWithUsDesc": "Vizyonunuzu tartışalım ve fikirlerinizi hayata geçiren özel bir strateji oluşturalım. SIVRA'nın yolculuğunuzu nasıl destekleyebileceğini keşfetmek için ücretsiz bir danışma rezervasyonu yapın.",
     "bookConsultation": "Ücretsiz Danışma Rezervasyonu",
     "viewPortfolio": "Çalışmalarımızı Görüntüle",
     "learnMore": "Daha Fazla Bilgi",
@@ -58,21 +58,29 @@
       "title": "Pazarlama ve Büyüme",
       "description": "Sosyal medya stratejisi, içerik oluşturma, ücretli reklam kampanyaları, satış hunileri, e-posta pazarlama ve işletmenizi etkili bir şekilde ölçeklendirmek için tasarlanmış büyüme sistemleri.",
       "feature1": "Sosyal medya stratejisi",
-      "feature2": "İçerik oluşturma ve yönetimi",
+      "feature2": "İçerik oluşturma ve yönetim",
       "feature3": "Ücretli reklam kampanyaları",
       "feature4": "Satış hunileri ve e-posta pazarlama"
     },
     "digitalProducts": {
       "title": "Dijital Ürün Geliştirme",
-      "description": "E-kitaplar ve kurslardan şablonlar ve rehberlere kadar dijital ürünler oluşturmanıza, paketlemenize ve satmanıza yardımcı oluyoruz. Ya da sizin adınıza oluşturup satalım.",
-      "feature1": "E-kitap ve rehber oluşturma",
+      "description": "E-kitaplardan ve kurslardan şablonlara ve kılavuzlara kadar dijital ürünler oluşturmanıza, paketlemenize ve satmanıza yardımcı oluyoruz. Veya bunları sizin adınıza oluşturup satalım.",
+      "feature1": "E-kitaplar ve kılavuz oluşturma",
       "feature2": "Kurs geliştirme",
       "feature3": "Şablon tasarımı",
       "feature4": "Ürün lansmanı stratejisi"
     },
+    "techSolutions": {
+      "title": "Teknoloji Çözümleri",
+      "description": "Yapay zeka ile desteklenen eksiksiz dijital altyapı. Özel web sitelerinden ve CRM sistemlerinden akıllı e-posta pazarlamaya ve yapay zeka otomasyonuna kadar - işletmenizin dijital çağda başarılı olması için ihtiyaç duyduğu her şey.",
+      "feature1": "Profesyonel web sitesi oluşturma",
+      "feature2": "Entegre CRM sistemleri",
+      "feature3": "Yapay zeka destekli e-posta pazarlama",
+      "feature4": "Akıllı otomasyon ve yapay zeka çözümleri"
+    },
     "webDesign": {
       "title": "Web Sitesi ve Tasarım",
-      "description": "Özel web sitesi tasarımı ve geliştirme, açılış sayfaları, ambalaj tasarımı ve markanızı tüm temas noktalarında profesyonel bir şekilde sunmak için gereken tüm görsel varlıklar."
+      "description": "Özel web sitesi tasarımı ve geliştirme, açılış sayfaları, ambalaj tasarımı ve markanızı tüm temas noktalarında profesyonelce sunmak için gereken tüm görsel varlıklar."
     },
     "stat1": "Tamamlanan Proje",
     "stat2": "Mutlu Müşteri",
@@ -189,7 +197,7 @@
         "subtitle": "Kaygıyı, Kontrol Sorunlarını ve Toksik Bağları İyileştirin",
         "description": "Duygusal Özgürlük için Zihinsel Sağlık e-Kitabı PDF",
         "category": "Zihinsel Sağlık",
-        "image": "/assets/pr1.jpg"
+        "image": "/assets/pr1.png"
       },
       {
         "id": "pr2",
@@ -197,7 +205,7 @@
         "subtitle": "Kadınlar ve Aşırı Düşünenler İçin",
         "description": "Özgün öz-sevgi ve güven inşa etmek için kapsamlı rehber",
         "category": "Kişisel Gelişim",
-        "image": "/assets/pr2.jpg"
+        "image": "/assets/pr2.png"
       },
       {
         "id": "pr3",
@@ -205,7 +213,7 @@
         "subtitle": "İlişki Ustalığı Rehberi",
         "description": "İlişkilerinizi kanıtlanmış psikolojik stratejilerle dönüştürün",
         "category": "İlişkiler",
-        "image": "/assets/pr3.jpg"
+        "image": "/assets/pr3.png"
       },
       {
         "id": "pr4",
@@ -213,7 +221,7 @@
         "subtitle": "Ruhunuzu Yeniden Şekillendiren Yasak Günlük",
         "description": "Derin öz-keşif için dönüştürücü bir günlük deneyimi",
         "category": "Günlük",
-        "image": "/assets/pr4.jpg"
+        "image": "/assets/pr5.png"
       },
       {
         "id": "pr5",
@@ -221,7 +229,7 @@
         "subtitle": "En İyi Yılınızı Planlayın",
         "description": "Hırslı girişimciler ve yaratıcılar için tasarlanmış stratejik planlayıcı",
         "category": "Üretkenlik",
-        "image": "/assets/pr5.jpg"
+        "image": "/assets/pr4.png"
       },
       {
         "id": "pr7",
@@ -229,7 +237,7 @@
         "subtitle": "Profesyonel Yatırımcı Hazır Şablon",
         "description": "Yatırımcıları ve müşterileri kazanmak için etkileyici sunum şablonu",
         "category": "İş",
-        "image": "/assets/pr7.jpg"
+        "image": "/assets/pr7.png"
       }
     ]
   },
@@ -269,66 +277,83 @@
       "icon": "moon"
     }
   ]
-},
-  "pricing": {
-    "badge": "Fiyatlandırma Planları",
-    "title": "Planınızı Seçin",
-    "subtitle": "Her iş aşaması için esnek fiyatlandırma seçenekleri",
-    "description": "Kapsamlı çözümlerimizle işinizi büyütmek için mükemmel planı seçin",
-    "cta": "Hemen Kaydol",
-    "bottomText": "Özel bir çözüme mi ihtiyacınız var? Özel ihtiyaçlarınız hakkında konuşalım.",
-    "contactCta": "Bize Ulaşın",
-    "tiers": [
-      {
-        "id": "starter",
-        "name": "Başlangıç Planı",
-        "tagline": "Küçük İşletmeler ve Yeni Başlayanlar İçin",
-        "setupPrice": "$1,000 Kurulum +",
-        "monthlyPrice": "$97/ay",
-        "description": "Müşteri adaylarını yakalamak ve çevrimiçi varlığınızı geliştirmek için tasarlanmış şık, mobil uyumlu bir web sitesiyle başlayın.",
-        "features": [
-          "3 Sayfalık Web Sitesi",
-          "Sayfa İçi SEO Optimizasyonu",
-          "Müşteri Yakalama Formu ve Sohbet Widget'ı",
-          "Mobil Uyumlu Web Sitesi Tasarımı",
-          "Mobil Uygulama Yönetimi",
-          "SMS ve E-posta Otomasyonları"
-        ],
-        "highlighted": false
-      },
-      {
-        "id": "growth",
-        "name": "Büyüme Planı",
-        "tagline": "Büyüyen İşletmeler ve Girişimciler İçin",
-        "setupPrice": "$2,000 Kurulum +",
-        "monthlyPrice": "$297/ay",
-        "description": "Dönüşümleri en üst düzeye çıkarmak için gelişmiş SEO, otomasyon ve müşteri adayı yönetim araçlarıyla işinizi büyütün.",
-        "features": [
-          "5 Sayfalık Web Sitesi",
-          "Başlangıç Planındaki Her Şey +",
-          "Google Yorumları Otomasyonu",
-          "Ödeme İşlemleri",
-          "Takvim Rezervasyon Sistemi",
-          "Öncelikli Destek"
-        ],
-        "highlighted": true
-      },
-      {
-        "id": "elite",
-        "name": "Elite Planı",
-        "tagline": "Yüksek Performanslı Markalar ve Kurumlar İçin",
-        "setupPrice": "$3,000 Kurulum +",
-        "monthlyPrice": "$697/ay",
-        "description": "Hızlı büyüyen işletmeler için tam otomasyon, premium özelleştirme ve kurumsal düzeyde çözümlerin kilidini açın.",
-        "features": [
-          "10+ Sayfalık Web Sitesi",
-          "Büyüme Planındaki Her Şey +",
-          "Devam Eden SEO Optimizasyonu",
-          "AI Chatbot ve Sesli Bot",
-          "İki Ayda Bir Pazarlama Danışmanlığı Görüşmeleri"
-        ],
-        "highlighted": false
-      }
-    ]
-  }
+  },
+"pricing": {
+  "badge": "Fiyatlandırma Planları",
+  "title": "Planınızı Seçin",
+  "subtitle": "Her iş aşaması için esnek fiyatlandırma seçenekleri",
+  "description": "Kapsamlı çözümlerimizle işinizi büyütmek için mükemmel planı seçin",
+  "cta": "Hemen Kaydol",
+  "bottomText": "Özel bir çözüme mi ihtiyacınız var? Özel ihtiyaçlarınız hakkında konuşalım.",
+  "contactCta": "Bize Ulaşın",
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Başlangıç Planı",
+      "tagline": "Küçük İşletmeler ve Yeni Başlayanlar İçin",
+      "setupPrice": "$1200 Kurulum +",
+      "monthlyPrice": "$175/ay",
+      "description": "Müşteri adaylarını yakalamak ve çevrimiçi varlığınızı geliştirmek için tasarlanmış şık, mobil uyumlu bir web sitesiyle başlayın.",
+      "features": [
+        "3 Sayfalık Web Sitesi",
+        "Sayfa İçi SEO Optimizasyonu",
+        "Müşteri Yakalama Formu ve Sohbet Widget'ı",
+        "Mobil Uyumlu Web Sitesi Tasarımı",
+        "Mobil Uygulama Yönetimi",
+        "SMS ve E-posta Otomasyonları"
+      ],
+      "highlighted": false
+    },
+    {
+      "id": "growth",
+      "name": "Büyüme Planı",
+      "tagline": "Büyüyen İşletmeler ve Girişimciler İçin",
+      "setupPrice": "$2350 Kurulum +",
+      "monthlyPrice": "$350/ay",
+      "description": "Dönüşümleri en üst düzeye çıkarmak için gelişmiş SEO, otomasyon ve müşteri adayı yönetim araçlarıyla işinizi büyütün.",
+      "features": [
+        "5 Sayfalık Web Sitesi",
+        "Başlangıç Planındaki Her Şey +",
+        "Google Yorumları Otomasyonu",
+        "Ödeme İşlemleri",
+        "Takvim Rezervasyon Sistemi",
+        "Öncelikli Destek"
+      ],
+      "highlighted": true
+    },
+    {
+      "id": "elite",
+      "name": "Elite Planı",
+      "tagline": "Yüksek Performanslı Markalar ve Kurumlar İçin",
+      "setupPrice": "$3500 Kurulum +",
+      "monthlyPrice": "$800/ay",
+      "description": "Hızlı büyüyen işletmeler için tam otomasyon, premium özelleştirme ve kurumsal düzeyde çözümlerin kilidini açın.",
+      "features": [
+        "10+ Sayfalık Web Sitesi",
+        "Büyüme Planındaki Her Şey +",
+        "Devam Eden SEO Optimizasyonu",
+        "AI Chatbot ve Sesli Bot",
+        "İki Ayda Bir Pazarlama Danışmanlığı Görüşmeleri"
+      ],
+      "highlighted": false
+    },
+    {
+      "id": "general-services",
+      "name": "Genel Hizmetler",
+      "tagline": "Kapsamlı İş Çözümleri",
+      "setupPrice": "$500 - $2000",
+      "monthlyPrice": "İhtiyaçlarınıza Göre",
+      "description": "Stratejik pazarlama, markalaşma ve çeşitli iş çözümleriyle markanızı yükseltmek için özel hizmetler.",
+      "features": [
+        "Marka ve Kimlik Tasarımı",
+        "Pazarlama Stratejisi Geliştirme",
+        "Satış ve Pazarlama Stratejisi",
+        "Çeşitli İş Hizmetleri",
+        "Özel Çözümler",
+        "Şirket İhtiyaçlarına Göre Esnek Fiyatlandırma"
+      ],
+      "highlighted": false
+    }
+  ]
+}
 }
