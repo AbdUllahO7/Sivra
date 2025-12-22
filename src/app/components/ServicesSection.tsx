@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface ServiceIcon {
-  icon: React.ReactNode;
-  label: string;
-}
+// --- IMPORTANT: Adjust these paths to match your project structure ---
+// Assuming images are in an 'assets' folder relative to this component
+import serv1Image from '/assets/serv1.jpeg';
+import serv2Image from '/assets/serv2.jpeg';
+import serv3Image from '/assets/serv3.jpeg';
+import serv4Image from '/assets/serv4.jpeg';
+// ---------------------------------------------------------------------
 
 interface UnifiedServiceCardProps {
   title: string;
@@ -12,7 +15,7 @@ interface UnifiedServiceCardProps {
   features: string[];
   isActive: boolean;
   onClick: () => void;
-  icons: ServiceIcon[];
+  imageSrc: string; // Changed from icons[] to a single image source string
   badge?: string;
 }
 
@@ -22,7 +25,7 @@ const UnifiedServiceCard: React.FC<UnifiedServiceCardProps> = ({
   features,
   isActive,
   onClick,
-  icons,
+  imageSrc, // New prop
   badge
 }) => {
   const { t } = useTranslation();
@@ -37,30 +40,26 @@ const UnifiedServiceCard: React.FC<UnifiedServiceCardProps> = ({
       {/* Main Card Container */}
       <div className="relative bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
         
-        {/* Header Section (Dark) */}
-        <div className="relative h-56 overflow-hidden bg-black flex items-center justify-center p-6">
-          {/* Subtle Background Pattern */}
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        {/* Header Section (Image) */}
+        {/* Changed padding to p-0 so image fits corner to corner */}
+        <div className="relative h-56 overflow-hidden bg-black flex items-center justify-center p-0 group">
           
+          {/* The Image */}
+          <img 
+            src={imageSrc} 
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          
+          {/* Gradient Overlay so badge is readable */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30"></div>
+
           {badge && (
-            <div className="absolute top-4 right-4 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold rounded-full tracking-widest uppercase">
+            <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-bold rounded-full tracking-widest uppercase z-10">
               {badge}
             </div>
           )}
-
-          {/* Icon Grid/Layout */}
-          <div className="relative z-10 flex gap-4 items-center justify-center w-full">
-            {icons.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center gap-2 group/icon">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:-translate-y-1">
-                  <div className="w-7 h-7">{item.icon}</div>
-                </div>
-                <span className="text-[10px] font-medium text-gray-400 uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
+           {/* Old Icon Grid removed here */}
         </div>
 
         {/* Content Section (Light) */}
@@ -108,40 +107,29 @@ const ServicesSection: React.FC = () => {
       title: t('services.brandStrategy.title'),
       description: t('services.brandStrategy.description'),
       badge: 'Identity',
-      icons: [
-        { label: 'Logo', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 21a10.003 10.003 0 008.384-4.562l.054.09m-3.44 2.04l.054-.09A10.003 10.003 0 0112 3c1.255 0 2.443.23 3.534.649m2.926 2.712A10.003 10.003 0 0121 12c0 1.255-.23 2.443-.649 3.534m-2.712 2.926A10.003 10.003 0 0112 21a10.003 10.003 0 01-8.384-4.562l-.054-.09m3.44-2.04l-.054.09a10.003 10.003 0 004.562 8.384l.09.054m2.04-3.44l.09.054a10.003 10.003 0 008.384-4.562l.054-.09" /></svg> },
-        { label: 'Voice', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg> }
-      ],
+      // Replaced 'icons' array with 'imageSrc'
+      imageSrc: '/assets/serv1.jpeg',
       features: [t('services.brandStrategy.feature1'), t('services.brandStrategy.feature2'), t('services.brandStrategy.feature3'), t('services.brandStrategy.feature4')]
     },
     {
       title: t('services.digitalMarketing.title'),
       description: t('services.digitalMarketing.description'),
       badge: 'Growth',
-      icons: [
-        { label: 'Ads', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg> },
-        { label: 'SEO', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> }
-      ],
+      imageSrc: '/assets/serv2.jpeg',
       features: [t('services.digitalMarketing.feature1'), t('services.digitalMarketing.feature2'), t('services.digitalMarketing.feature3'), t('services.digitalMarketing.feature4')]
     },
     {
       title: t('services.digitalProducts.title'),
       description: t('services.digitalProducts.description'),
       badge: 'Product',
-      icons: [
-        { label: 'UX', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg> },
-        { label: 'UI', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 8h8v8H8z" /></svg> }
-      ],
+      imageSrc: '/assets/serv3.jpeg',
       features: [t('services.digitalProducts.feature1'), t('services.digitalProducts.feature2'), t('services.digitalProducts.feature3'), t('services.digitalProducts.feature4')]
     },
     {
       title: t('services.techSolutions.title'),
       description: t('services.techSolutions.description'),
       badge: 'AI Powered',
-      icons: [
-        { label: 'Web', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9" /></svg> },
-        { label: 'AI', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> }
-      ],
+      imageSrc: '/assets/serv4.jpeg',
       features: [t('services.techSolutions.feature1'), t('services.techSolutions.feature2'), t('services.techSolutions.feature3'), t('services.techSolutions.feature4')]
     }
   ];
